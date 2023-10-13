@@ -9,7 +9,7 @@ Rem Purpose / Description    		  -
 Rem ********************************************************************************************************************************
 Rem **********************************************Start of Framework initialization**********************************************
 
-
+@@ script infofile_;_ZIP::ssf507.xml_;_
 
 Set fso=CreateObject("scripting.filesystemobject")
 pFolderPath=Environment("TestDir")
