@@ -1,0 +1,80 @@
+﻿
+
+Function SalesOrderCreation(InputData)
+	'Start Reporting 
+	Reporter.StartStatusTrack	
+	Reporter.StartFunction "Scenario TC_0.1_Sales Order Creation","True"
+	
+	' Invoke Application
+'	SAPLogon(aLoginData)
+	FioriAppLaunch
+	Wait 5
+	' Login 
+	LoginDetails(InputData)
+	
+	' Select My App
+	SelectMyApp "Sales - Sales Order Processing"
+	
+	' T-Code
+	SelectTCode InputData, "Create Sales OrdersVA01"
+	
+	OrderDetails(InputData)
+	
+'	EnterSalesOrderDetails(InputData)
+	
+	
+	'clsControlsSAP.SetSAPOKCode ("/nVA01")
+'	oTest.SetSAPOKCode "/nVA01"
+	
+'	oControls.SetSAPOKCode "/nVA01"
+	
+	 
+	 Reporter.EndFunction
+        Reporter.EndStatusTrack
+End Function
+
+
+
+Function SalesOrderCreationSAPLogon(InputData)
+	'Start Reporting 
+	Reporter.StartStatusTrack	
+	Reporter.StartFunction "Scenario TC_0.2_Sales Order Creation","True"
+	
+	
+	Reporter.StartStatusTrack	
+	Reporter.StartFunction "fnOTCFlow with referance","True"
+	''Loggin in to SAP system
+	SAPLogon (aLoginData)
+	oControls.SetSAPOKCode ("/nVA01")
+	''Entering Order Type
+	oControls.SetSAPEdit "VBAK-AUART", InputData("OrderType")
+	
+'	oControls.SetSAPEdit "VBAK-AUART", "OR"
+	''Entering Sales Organization
+	oControls.SetSAPEdit "VBAK-VKORG", "ABCB"
+	oControls.SetSAPEdit "VBAK-VKORG", InputData("SalesOrganization")
+	''Entering Distribution Channel
+	oControls.SetSAPEdit "VBAK-VTWEG", "A1"
+	oControls.SetSAPEdit "VBAK-VTWEG", InputData("DistributionChannel")
+	''Entering Division
+	oControls.SetSAPEdit "VBAK-SPART", "B1"	
+	oControls.SetSAPEdit "VBAK-SPART", InputData("Division")
+	''Clicking on Create with referance button
+	oControls.ClickSAPButton "btn\[8\]"
+	
+
+	
+	
+	'clsControlsSAP.SetSAPOKCode ("/nVA01")
+'	oTest.SetSAPOKCode "/nVA01"
+	
+'	oControls.SetSAPOKCode "/nVA01"
+	
+	 
+	 Reporter.EndFunction
+        Reporter.EndStatusTrack
+End Function
+
+
+
+
