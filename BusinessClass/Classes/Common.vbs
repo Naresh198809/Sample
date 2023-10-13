@@ -8,8 +8,8 @@ Function FioriAppLaunch
 	
 '	SystemUtil.Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe","https://s4hana5.mydomain.com:44300/sap/bc/ui2/flp"    ---- RDP location
 '	SystemUtil.Run "C:\Program Files\Google\Chrome\Application\chrome.exe","https://s4hana5.mydomain.com:44300/sap/bc/ui2/flp"
-	SystemUtil.Run "C:\Program Files\Google\Chrome\Application\chrome.exe","https://s4hana5.nivedasoft.com:44300/sap/bc/ui2/flp"
-'	SystemUtil.Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe","https://s4hana5.nivedasoft.com:44300/sap/bc/ui2/flp"
+'	SystemUtil.Run "C:\Program Files\Google\Chrome\Application\chrome.exe","https://s4hana5.nivedasoft.com:44300/sap/bc/ui2/flp"
+	SystemUtil.Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe","https://s4hana5.nivedasoft.com:44300/sap/bc/ui2/flp"
 	
 	If Browser("name:=Logon").Exist(2) Then
 		
